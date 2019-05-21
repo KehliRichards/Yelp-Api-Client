@@ -41,8 +41,10 @@
     <img *ngIf="yelpSearch.rating === 4" src="../../assets/regular/regular_4.png">
     <img *ngIf="yelpSearch.rating === 4.5" src="../../assets/regular/regular_4_half.png">
     <img *ngIf="yelpSearch.rating === 5" src="../../assets/regular/regular_5.png">
-    <h1 *ngIf="yelpSearch.transactions.length !== 0">Delivers!</h1>
+    <h1 *ngIf="yelpSearch.transactions.length !== 0 && yelpSearch.transactions[0] === 'delivery'">Delivers!</h1>
+    <h1 *ngIf="yelpSearch.transactions.length !== 0 && yelpSearch.transactions[1] === 'delivery'">Delivers!</h1>
     <h1 *ngIf="yelpSearch.transactions.length === 0">Does not deliver</h1>
+    <h1 *ngIf="yelpSearch.transactions.length === 1 && yelpSearch.transactions[0] !== 'delivery'">Does not deliver</h1>
   </div>
   <div *ngIf="yelpSearch">
     <img class="img" src="{{yelpSearch.image_url}}" alt="image">

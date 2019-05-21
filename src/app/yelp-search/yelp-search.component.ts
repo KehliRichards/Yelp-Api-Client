@@ -36,6 +36,7 @@ export class YelpSearchComponent implements OnInit {
         const random = search.businesses[Math.floor(Math.random() * search.businesses.length)];
         if (random.is_closed === false) {
           console.log('yay')
+          console.log(random.transactions[0])
           this.yelpSearch = random;
         }
         if (random.is_closed === true) {
