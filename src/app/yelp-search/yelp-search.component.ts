@@ -31,12 +31,19 @@ export class YelpSearchComponent implements OnInit {
 
   onSearch() {
     this.yelpService.fetchYelpApi(this.searchForm.value.city, this.searchForm.value.state, this.searchForm.value.price)
-    .subscribe((search => {
-      console.log(search);
-      const random = search.businesses[Math.floor(Math.random()*search.businesses.length)];
-      this.yelpSearch = random;
-      console.log(this.yelpSearch);
-    }))
+      .subscribe((search => {
+        console.log(search);
+        const random = search.businesses[Math.floor(Math.random() * search.businesses.length)];
+        if (random.is_closed === false) {
+          // console.log('yay')
+          this.yelpSearch = random;
+        } else {
+          // console.log('woo')
+          const random = search.businesses[Math.floor(Math.random() * search.businesses.length)];
+          this.yelpSearch = random;
+        }
+        console.log(this.yelpSearch);
+      }))
   }
 
 }
