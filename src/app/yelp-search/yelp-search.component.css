@@ -46,4 +46,5 @@
     margin-left: 1vw;
     margin-right: 1vw;
     width: 18vw;
+    filter: saturate(200%) brightness(50%);
 }
