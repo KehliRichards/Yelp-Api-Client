@@ -1,0 +1,50 @@
+<form class="form" [formGroup]="searchForm">
+
+  <h1 class="header">Help!*</h1>
+  <p class="subheader">*I'm Hungry!</p>
+
+  <mat-form-field color="warn" appearance="outline" class="outline" for="price">
+    <mat-label class="label">Price</mat-label>
+    <mat-select class="select" formControlName="price" name="price">
+      <mat-option value="1">$</mat-option>
+      <mat-option value="2">$$</mat-option>
+      <mat-option value="3">$$$</mat-option>
+      <mat-option value="4">$$$$</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field color="warn" appearance="outline" class="outline" for="city">
+    <mat-label class="label">City</mat-label>
+    <input class="input" formControlName="city" type="text" name="city" matInput placeholder="Enter a city">
+  </mat-form-field>
+  <mat-form-field color="warn" appearance="outline" class="outline" for="state">
+    <mat-label class="label">State</mat-label>
+    <input class="input" formControlName="state" type="text" name="state" matInput placeholder="Enter a state">
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button class="button" (click)="onSearch()">Search</button>
+
+</form>
+
+
+<div class="full" *ngIf="yelpSearch">
+  <div class="results">
+    <h1>{{yelpSearch.name}}</h1>
+    <h1>{{yelpSearch.display_phone}}</h1>
+    <h1>{{yelpSearch.location.display_address[0]}}, {{yelpSearch.location.display_address[1]}}</h1>
+    <img *ngIf="yelpSearch.rating === 0" src="../../assets/regular/regular_0.png">
+    <img *ngIf="yelpSearch.rating === 1" src="../../assets/regular/regular_1.png">
+    <img *ngIf="yelpSearch.rating === 1.5" src="../../assets/regular/regular_1_half.png">
+    <img *ngIf="yelpSearch.rating === 2" src="../../assets/regular/regular_2.png">
+    <img *ngIf="yelpSearch.rating === 2.5" src="../../assets/regular/regular_2_half.png">
+    <img *ngIf="yelpSearch.rating === 3" src="../../assets/regular/regular_3.png">
+    <img *ngIf="yelpSearch.rating === 3.5" src="../../assets/regular/regular_3_half.png">
+    <img *ngIf="yelpSearch.rating === 4" src="../../assets/regular/regular_4.png">
+    <img *ngIf="yelpSearch.rating === 4.5" src="../../assets/regular/regular_4_half.png">
+    <img *ngIf="yelpSearch.rating === 5" src="../../assets/regular/regular_5.png">
+    <h1 *ngIf="yelpSearch.transactions.length !== 0">Delivers!</h1>
+    <h1 *ngIf="yelpSearch.transactions.length === 0">Does not deliver</h1>
+  </div>
+  <div *ngIf="yelpSearch">
+    <img class="img" src="{{yelpSearch.image_url}}" alt="image">
+  </div>
+</div>

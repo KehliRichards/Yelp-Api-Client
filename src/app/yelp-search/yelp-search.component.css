@@ -1,0 +1,49 @@
+.header {
+    font-size: 5vmax;
+    color: maroon;
+}
+
+.subheader {
+    color: maroon;
+    margin-top: -5vh;
+    margin-bottom: 8vh;
+}
+
+.button {
+    top: -0.75vh;
+    background: maroon;
+    color: ghostwhite;
+    height: 8vh;
+    width: 8vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-size: 1vmax;
+}
+
+.select {
+    color: white;
+}
+
+.full {
+    margin: 8vh auto;
+}
+
+.results {
+    text-align: left;
+    margin-left: 17vw;
+}
+
+.img {
+    float: left;
+    margin-left: 60vw;
+    margin-top: -37vh;
+    max-width: 30vw;
+    max-height: 35vh;
+}
+
+.outline {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 18vw;
+}
